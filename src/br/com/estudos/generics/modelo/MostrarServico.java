@@ -3,15 +3,15 @@ package br.com.estudos.generics.modelo;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MostrarServico {
+public class MostrarServico<T> {
 	
-	List<Object> listaDeServicos = new ArrayList<>();
+	List<T> listaDeServicos = new ArrayList<>();
 
-	public void adicionarValor(Object valor) {
+	public void adicionarValor(T valor) {
 		this.listaDeServicos.add(valor);
 	}
 	
-	public Object primeiroValor() {
+	public T primeiroValor() {
 		if(this.listaDeServicos.isEmpty()) {
 			throw new IllegalStateException("A lista está vazia");
 		}
@@ -19,9 +19,9 @@ public class MostrarServico {
 	}
 	
 	public void listaValores() {
-		System.out.print("[");
-		 for(Object ms : listaDeServicos) {
-			 System.out.print(","+ms.toString());
+		System.out.print("["+listaDeServicos.get(0));
+		 for(int i = 1; i < listaDeServicos.size(); i++) {
+			 System.out.print(","+listaDeServicos.get(i));
 		 }
 		System.out.print("]");
 	}

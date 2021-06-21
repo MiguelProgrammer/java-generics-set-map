@@ -1,4 +1,4 @@
-package br.com.estudos.generics.servico;
+package br.com.estudos.generics.programa;
 
 import java.util.Scanner;
 
